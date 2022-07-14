@@ -202,16 +202,6 @@ h2{
   max-width: 250px;
 }
 
-.review-card{
-  display: flex;
-  flex-direction:row;
-  justify-content: space-between;
-  max-width: 60%;
-  max-height: 5%;
-  border: #6e6e6e
-  border-size: 1px
-}
-
 
 
 #signin-modal-container{
@@ -242,7 +232,7 @@ nav {
 
 .logo {
   display: inline-block;
-  max-height: 25px;
+  max-height: 20px;
 }
 
 .nav-links {
