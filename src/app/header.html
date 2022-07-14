@@ -1,11 +1,21 @@
-    <nav class="navbar">
-    <a href="https://freecodecamp.org" class="logo"> FoodReviews.com
-<!--       <img src="https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg" alt="freeCodeCamp logo"> -->
-    </a>
-    <ul class="nav-links">
+
+<nav class="navbar">
+  <div style='flex:1'>
+    <a href="/src/app/home.php" class="logo"> FoodReviews.com </a>
+  </div>
+  
+  <div style='flex:1'>
+    <ul style= 'justify-content: center;' class="nav-links">
       <li class="nav-item"><a href="/src/app/home.php">Home</a></li>
       <li class="nav-item"><a href="/src/app/account_view.php">Account View</a></li>
       <li class="nav-item"><a href="/src/app/restaurant_view.php">Restaurant View</a></li>
       <li class="nav-item"><a href="/src/app/user_settings.php">User Settings</a></li>
     </ul>
-  </nav>
+  </div>
+  <div style='flex:1'>
+    <ul style= 'justify-content: right;'class="nav-links">
+      <li class="nav-item"><a href="/src/app/authenticate.php">Create an Account</a></li>
+      <li class="nav-item"><a href="/src/app/authenticate.php">Sign-In</a></li>
+    </ul>
+  </div>
+</nav>

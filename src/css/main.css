@@ -20,6 +20,7 @@ body {
 }
 
 
+
 /* --------------------------------- */
 /* Heading Styling  */
 h2{
@@ -47,6 +48,8 @@ h2{
   padding: 15px;
   margin: 0 auto;
   color: #017572;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-signin .form-signin-heading,
@@ -66,6 +69,7 @@ h2{
   box-sizing: border-box;
   padding: 10px;
   font-size: 16px;
+  border-radius: 5px;
 }
 
 .form-signin .form-control:focus {
@@ -80,24 +84,129 @@ h2{
 }
 
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  margin-bottom: 20px;
+  margin-top: -10px;
+  border-top-left-radius: 5;
+  border-top-right-radius: 5;
   border-color:#017572;
 }
 /* End of Form Styling */
 /* --------------------------------- */
 
-/* Sign in Modal Styling */
-.signin-modal{
-  background: blue;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 1px 1px;
 
+/* --------------------------------- */
+/* Button Styling */
+#btn-primary{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
+
+#btn-create-account{
+  background-color: #ffffff; /* Green */
+  border: 1px;
+  border-color:black;
+  border-radius: 5px;
+  color: #545454;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  
+}
+
+#btn-delete-account{
+  background-color: #ef6262; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+  
+#btn-change-image{
+  background-color: #4682fb; /* Green */
+  color: white;
+  padding: 2px 5px 2px 5px;
+  margin-top:5px;
+  margin-bottom:10px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+/* End of Button Styling */
+/* --------------------------------- */
+
+
+
+/* Sign in Modal Styling */
+
+.signin-modal {
+  background: blue;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 1px 1px;
+}
+#signin-modal {
+  background: blue;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 1px 1px;
+}
+
+.container{
+  display: flex;
+  justify-content:center;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.vertical-container{
+  display: inline-flex;
+  flex-direction:column;
+  justify-content: space-around;
+}
+
+.restaurant-card{
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  padding: 15px 5px 15px 5px;
+  align-items:left;
+  align-content:center;
+  max-width: 250px;
+}
+
+.card-img{
+  max-width: 250px;
+}
+
+.review-card{
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  max-width: 60%;
+  max-height: 5%;
+  border: #6e6e6e
+  border-size: 1px
+}
+
+
+
+
 
 #signin-modal-container{
   display: flex;
@@ -110,14 +219,14 @@ h2{
 
 #newuser{
   text-align:center;
-  margin-top:10px;
+  margin-top:15px;
   margin-bottom: 0px;
   color:white;
 }
 
 
-
-/* Navigation Styling */
+/* --------------------------------- */
+/* Header and Nav Styling */
 nav {
   width: 100%;
   background-color: darkgreen;
@@ -128,13 +237,13 @@ nav {
 
 .logo {
   display: inline-block;
+  max-height: 25px;
 }
 
 .nav-links {
   list-style: none;
-}
-.nav-links {
   display: flex;
+  
 }
 
 .nav-item a {
@@ -162,4 +271,39 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-/* End of Navigation Styling */
+/* End of Header and NavStyling */
+/* --------------------------------- */
+
+/* Footer Styling */
+
+footer {
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 15px 20px 15px 20px;
+  position: fixed;  
+  left: 0px;  
+  bottom: 0px;  
+  right: 0px;   
+  width: 100%;  
+  background-color: gray;  
+  color: white;  
+  text-align: center;  
+}  
+
+
+/* Table Styling */
+th {
+  text-align: left;
+}
+
+table {
+  border-spacing: 30px;
+}
+
+tr:hover {
+  background-color: #D6EEEE;
+}
+
+#rating{
+   text-align: center;
+}
