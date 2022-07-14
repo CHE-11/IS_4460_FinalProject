@@ -180,6 +180,14 @@ h2{
   justify-content: space-around;
 }
 
+.spacer-less{
+  height: 15vh;
+}
+
+.spacer-more{
+  height: 25vh;
+}
+
 .restaurant-card{
   display: flex;
   flex-direction:column;
@@ -227,10 +235,9 @@ h2{
 /* Header and Nav Styling */
 nav {
   width: 100%;
-  background-color: darkgreen;
-  padding-left: 30px;
-  padding-right: 10px;
+  background-color: #2360c9;
   margin-bottom: 20px;
+  padding: 4px 10px 4px 30px;
 }
 
 .logo {
@@ -246,17 +253,20 @@ nav {
 
 .nav-item a {
   display: inline-block;
-  padding: 10px 15px;
+  padding: 5px 15px;
   text-decoration: none;
   color: white;
 }
 
 .nav-item:hover {
   background-color: white;
+  border-radius: 4px;
+  
 }
 
 .nav-item:hover a {
-  color: darkgreen;
+  color: rgb(0, 38, 141);
+  text-decoration: underline;
 }
 
 .logo img {
@@ -277,17 +287,33 @@ nav {
 footer {
   display: inline-flex;
   justify-content: space-between;
-  padding: 15px 20px 15px 20px;
-  position: fixed;  
-  left: 0px;  
-  bottom: 0px;  
-  right: 0px;   
+  align-items: center;
+  padding: 8px 20px 8px 20px;
   width: 100%;  
-  background-color: gray;  
+  background-color: #2360c9; 
   color: white;  
   text-align: center;  
+  position: fixed;
+  bottom: 0;
 }  
 
+.footer-icon{
+  display: inline-block;
+  max-height: 25px;
+}
+#icon-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+#footer-copyright{
+  display: inline-block;
+  max-height: 25px;
+  font-size: 12px;
+  color: rgb(158, 158, 158);
+}
 
 /* Table Styling */
 th {
