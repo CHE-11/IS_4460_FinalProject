@@ -21,6 +21,18 @@
 
   
 <body>
+  <div class="container">
+    <div class="searchbar" style="border:3px solid Black;">
+      <center>
+        <h1>Your Favorite Restaurants in One place</h1>
+        <form id='search-container'> <!--action='somefile.php' method='post'-->
+          <input id='search-bar' type='text' name='restaurantSearch' placeholder='Search for Food!'>
+          <input id='search-button' type='submit' value='Search'>
+        </form>
+      </center>
+      <br>
+    </div>
+  </div>
 <div class='container'>
   <div class= 'restaurant-card'>
     <img class ='card-img' src="/src/resources/images/restaurant-photo.jpg" alt ="Test Image">
