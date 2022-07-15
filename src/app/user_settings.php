@@ -34,11 +34,6 @@
           <input type = "text" class = "form-control" 
              name = "phone-number" placeholder = "Enter your Phone Number" 
              required autofocus></br>
-
-      
-          <input type = "zip-code" class = "form-control"
-             name = "zip-code" placeholder = "Enter your Zip Code" required>
-
         
           <button style = 'margin-top:15px' id = "btn-primary" type = "submit" 
              name = "info-update">Update Information</button>

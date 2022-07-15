@@ -8,46 +8,80 @@
     <link rel="stylesheet" href="/src/css/main.css">
 </head>
 <div class="header"><?php include('header.html');?></div>
+
+
+<!-- 
+  Restaurant Name
+  Reviews (number of reviews)
+  Average Rating
+  Restaurant Address
+  Description
+
+-->
+
   
 <body>
-<div class="Top" style="border:3px solid Black;">
-  <center>
-    <h1>Your Favorite Restaurants in One place</h1>
-    <form> <!--action='somefile.php' method='post'-->
-      Search For a Restaurant <input type='text' name='restaurantSearch'>
-      <input type='submit' value='Search'>
-    </form>
-  </center>
-  <br>
-</div>
-<div class="Left" style="float:left; width:33%; ">
-  <h1>Restaurant #1</h1>
-  <p>This is a short description of the restaurant</p>
-  <img src="/src/resources/images/restaurant-photo.jpg" alt ="Test Image" width="200" height="150">
-  <br>
+<div class='container'>
+  <div class= 'restaurant-card'>
+    <img class ='card-img' src="/src/resources/images/restaurant-photo.jpg" alt ="Test Image">
+    <div class="restaurant-description">
+      <h1>Restaurant #3</h1>
+      <div class="restaurant-rating">
+        <p style="text-align:center">Rating: 4.5 (10 reviews)</p>
+      </div>
+      <p class='restaurant-paragraph'>Lorem ipsum dolor sit amet consectetur welFHJLKJHWELJF'LAKJLKFAEl'kmf adipisicing elit. Doloribus, repudiandae voluptate accusamus cupiditate placeat ut repellat, dicta quam earum, veritatis molestiae optio rem velit possimus perferendis provident delectus voluptates eum.</p>
+      <br>
+    </div>
+  </div>
+
+  <div class= 'restaurant-card'>
+    <img class ='card-img' src="/src/resources/images/restaurant-photo.jpg" alt ="Test Image">
+    <div class="restaurant-description">
+      <h1>Restaurant #3</h1>
+      <div class="restaurant-rating">
+        <p style="text-align:center">Rating: 4.5 (10 reviews)</p>
+      </div>
+      <p class='restaurant-paragraph'>Lorem ipsum dolor sit amet consectetur welFHJLKJHWELJF'LAKJLKFAEl'kmf adipisicing elit. Doloribus, repudiandae voluptate accusamus cupiditate placeat ut repellat, dicta quam earum, veritatis molestiae optio rem velit possimus perferendis provident delectus voluptates eum.</p>
+      <br>
+    </div>
+  </div>
+
+  <div class= 'restaurant-card'>
+    <img class ='card-img' src="/src/resources/images/restaurant-photo.jpg" alt ="Test Image">
+    <div class="restaurant-description">
+      <h1>Restaurant #3</h1>
+      <div class="restaurant-rating">
+        <p style="text-align:center">Rating: 4.5 (10 reviews)</p>
+      </div>
+      <p class='restaurant-paragraph'>Lorem ipsum dolor sit amet consectetur welFHJLKJHWELJF'LAKJLKFAEl'kmf adipisicing elit. Doloribus, repudiandae voluptate accusamus cupiditate placeat ut repellat, dicta quam earum, veritatis molestiae optio rem velit possimus perferendis provident delectus voluptates eum.</p>
+      <br>
+    </div>
+  </div>
+
+  <div class= 'restaurant-card'>
+    <img class ='card-img' src="/src/resources/images/restaurant-photo.jpg" alt ="Test Image">
+    <div class="restaurant-description">
+      <h1>Restaurant #3</h1>
+      <div class="restaurant-rating">
+        <p style="text-align:center">Rating: 4.5 (10 reviews)</p>
+      </div>
+      <p class='restaurant-paragraph'>Lorem ipsum dolor sit amet consectetur welFHJLKJHWELJF'LAKJLKFAEl'kmf adipisicing elit. Doloribus, repudiandae voluptate accusamus cupiditate placeat ut repellat, dicta quam earum, veritatis molestiae optio rem velit possimus perferendis provident delectus voluptates eum.</p>
+      <br>
+    </div>
+  </div>
+
+  <div class ="Bottom" style="float:left; width:100%;" >
+    <center>
+      <br>
+      <p>Never Wonder What to Order Again</p>
+    </center>
+  </div>
 </div>
 
-<div class="Middle" style="float:left; width:33%;">
-  <h1>Restaurant #2</h1>
-  <p>This is a short description of the restaurant</p>
-  <img src="/src/resources/images/restaurant-photo.jpg" alt ="Test Image" width="200" height="150">
-  <br>
+<div>
+  <?php include('footer.html');?>
 </div>
 
-<div class="Right" style="float:left; width:33%;">
-  <h1>Restaurant #3</h1>
-  <p>This is a short description of the restaurant</p>
-  <img src="/src/resources/images/restaurant-photo.jpg" alt ="Test Image" width="200" height="150">
-  <br>
-</div>
-
-<div class ="Bottom" style="float:left; width:100%;" >
-  <center>
-    <br>
-    <p>Never Wonder What to Order Again</p>
-  </center>
-</div>
-<div><?php include('footer.html');?></div>
 </body>
 
 </html>

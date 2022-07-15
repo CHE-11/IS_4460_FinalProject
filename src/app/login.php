@@ -1,9 +1,3 @@
-<?php
-  if($_POST['email']=='cool' && $_POST['password'] == 'cool'){
-    header('location: home.php');
-  }
-  
-?>
 
 
 <html lang="en">
@@ -20,33 +14,86 @@
 <body>
   <div class='container' >
     <div id='signin-modal'>
-      <div class = 'container'>
-        <h2 id= 'signin-header'>Enter Username and Password</h2> 
-      </div>
-      <div class = "container form-signin">
-        <div id= 'signin-modal-container'>
-          <form class = "form-signin" role = "form" 
-              action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); 
-              ?>" method = "post">
-              <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
-              <input type = "text" class = "form-control" 
-                 name = "email" placeholder = "Enter your Email" 
-                 required autofocus></br>
-              <input type = "password" class = "form-control"
-                 name = "password" placeholder = "Enter your Password" required>
-              <button id = "btn-primary" type = "submit" 
-                 name = "login">Login</button>
-              <div class="center"><p id="newuser">New User?</p></div>
-              <button id=btn-create-account  type = "submit" name = "create_account">Create Account</button>
-          </form>  
-        </div>
+      <h1 style="text-align:center; color:white">Sign In</h1>
+      <h2 id= 'signin-header'>Enter Username and Password</h2> 
+      <div id= 'signin-modal-container'>
+        <form class = "form-signin" role = "form" action = "" method = "post" autocomplete="off">
+            <h4 class = "form-signin-heading"></h4>
+            <input type = "text" class = "form-control" name = "email" placeholder = "Enter your Email" required autofocus autocomplete="off">
+            <input type = "password" class = "form-control" name = "password" placeholder = "Enter your Password" required autocomplete="off">
+            <button id = "btn-primary" type = "submit" name = "login">Login</button>
+            <div class="center"><p id="newuser">New User?</p></div>
+            <a href="create_account.php">
+              <div id = "btn-secondary">Create Account</div>
+            </a>
+        </form>  
       </div>
     </div>
 
     <?php include('footer.html');?>
   </div>
 </body>
-  
-	
-
 </html>
+
+
+<?php
+require_once '../db/db_login.php';
+
+if (isset($_POST['login'])){
+
+  if (isset($_POST['email']) && isset($_POST['password'])) {
+    // Connect to DB
+    $conn = new mysqli($hn, $un, $pw, $db);
+    if($conn->connect_error) die($conn->connect_error);
+
+    //Get values from login screen
+    $tmp_email = mysql_entities_fix_string($conn, $_POST['email']);
+    $tmp_password = mysql_entities_fix_string($conn, $_POST['password']);
+
+    
+    //get password from DB w/ SQL
+    $query = "SELECT password FROM users WHERE email = '$tmp_email'";
+
+    $result = $conn->query($query); 
+	  if(!$result) die($conn->error);
+
+    // Check if there is a user with the given email
+    $rows = $result->num_rows;
+    $passwordFromDB="";
+    for($j=0; $j<$rows; $j++)
+    {
+      $result->data_seek($j); 
+      $row = $result->fetch_array(MYSQLI_ASSOC);
+      $passwordFromDB = $row['password'];
+	  }
+    // Compare passwords
+    if(password_verify($tmp_password,$passwordFromDB))
+    {
+ 
+      // $user = new User($tmp_username);
+
+      // session_start();
+      // $_SESSION['user'] = $user;
+      echo "<p style='text-align:center; font-size:16px; margin: 4px 0px 4px 0px; color: black;'>Login Successful!! <br>";
+      echo "<a style='text-decoration:underline; font-weight:700; color:blue;' href='home.php'> Go to Homepage </a>";
+    }
+    else
+    {
+      echo "<p style='text-align:center; font-size:16px; margin: 4px 0px 4px 0px; color: #b02020;'>Login Error: Please Confirm Email and Password and Retry. <br>";
+    }	
+    $conn->close();
+  
+  }
+}  
+
+//sanitization functions
+function mysql_entities_fix_string($conn, $string){
+  return htmlentities(mysql_fix_string($conn, $string));	
+}
+
+function mysql_fix_string($conn, $string){
+  $string = stripslashes($string);
+  return $conn->real_escape_string($string);
+}
+
+?>
