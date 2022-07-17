@@ -13,6 +13,7 @@ html {
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -49,6 +50,7 @@ h2{
 /* --------------------------------- */
 /* Form Styling  */
 .form-signin {
+  min-width: 300px;
   max-width: 330px;
   padding: 15px;
   margin: 0px 10px 0px 10px;
@@ -171,8 +173,10 @@ a:-webkit-any-link {
 
 .container{
   display: flex;
-  justify-content:center;
+  justify-content:
+  center;
   max-width: 100%;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -180,6 +184,16 @@ a:-webkit-any-link {
   display: inline-flex;
   flex-direction:column;
   justify-content: space-around;
+}
+
+.flex-vertical-container{
+  display: flex;
+  flex-direction:
+  column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: -15px;
 }
 
 .spacer-less{
@@ -202,30 +216,28 @@ a:-webkit-any-link {
   min-width: 250px;
   margin: 5px;
   border: #545454 solid 2px;
-  /* border-style: inset; */
   border-radius: 7px;
-  /* border-image-outset: 4px; */
-  /* vertical-align: bottom; */
-  /* justify-content: space-between; */
 }
 
 .card-img{
-  max-width: 246px;
-  min-width: 246px;
+  display: block;
+  /* margin: 0 auto; */
+  max-width: 101%;
+  min-width: 101%;
   border-radius: 5px;
+  position: relative;
+  margin: -1px;
 }
 
 .restaurant-description{
   display: flex;
   flex-direction: column;
-  align-content: ;
   justify-content: space-between;
   max-height: 200px;
   padding: 5px 10px 5px 10px;
   overflow: hidden;
   /* white-space: nowrap; */
-  /* text-overflow: ellipsis; */
-  text-overflow: ' ';
+  text-overflow: ellipsis;
 }
 
 .restaurant-rating{

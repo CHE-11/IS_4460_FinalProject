@@ -1,19 +1,21 @@
---This File has all the create Table and Insert statements in it
---you should only need to import this one file into phpMyAdmin
---the import should create and populate the database all at once
+/*
+This File has all the create Table and Insert statements in it
+you should only need to import this one file into phpMyAdmin
+the import should create and populate the database all at once
 
--- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1:3306
--- Generation Time: Jul 16, 2022 at 08:27 PM
--- Server version: 8.0.27
--- PHP Version: 7.4.26
+phpMyAdmin SQL Dump
+version 5.1.1
+https://www.phpmyadmin.net/
+
+Host: 127.0.0.1:3306
+Generation Time: Jul 16, 2022 at 08:27 PM
+Server version: 8.0.27
+PHP Version: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+*/
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -24,6 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `is4460foodreview`
 --
+
 CREATE DATABASE IF NOT EXISTS `is4460foodreview` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 USE `is4460foodreview`;
 
@@ -238,20 +241,20 @@ INSERT INTO `subscription` (`MembershipType`, `Amount`, `MembershipDesc`) VALUES
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `UserID` int NOT NULL AUTO_INCREMENT,
-  `email` varchar(128) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `email` varchar(128) NOT NULL UNIQUE,
   `phone` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `username` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `password` varchar(128) NOT NULL,
-  `Role` varchar(128) NOT NULL,
+  `role` varchar(128) NOT NULL,
   PRIMARY KEY (`UserID`),
-  UNIQUE KEY `username` (`username`)
+  UNIQUE KEY `password` (`password`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`UserID`, `email`, `phone`, `username`, `password`, `Role`) VALUES
+INSERT INTO `users` (`UserID`, `email`, `phone`, `name`, `password`, `Role`) VALUES
 (1, 'test email', 'test phone', 'test name', 'test password', 'member'),
 (2, 'johndoe@gmail.com', '801-123-4567', 'jdoe124', 'is4460', 'member'),
 (3, 'janedoe@gmail.com', '385-123-4567', 'jdoelovesfood', 'foodie1234', 'member'),

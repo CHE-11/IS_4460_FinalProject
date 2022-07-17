@@ -1,4 +1,8 @@
-
+<!--
+Murray
+Test this in WAMP once you have the database setup in phpMyAdmin.
+it won't work well in replit 
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -34,54 +38,9 @@
     </div>
   </div>
 <div class='container'>
-  <div class= 'restaurant-card'>
-    <img class ='card-img' src="/src/resources/images/restaurant-photo.jpg" alt ="Test Image">
-    <div class="restaurant-description">
-      <h1>Restaurant #3</h1>
-      <div class="restaurant-rating">
-        <p style="text-align:center">Rating: 4.5 (10 reviews)</p>
-      </div>
-      <p class='restaurant-paragraph'>Lorem ipsum dolor sit amet consectetur welFHJLKJHWELJF'LAKJLKFAEl'kmf adipisicing elit. Doloribus, repudiandae voluptate accusamus cupiditate placeat ut repellat, dicta quam earum, veritatis molestiae optio rem velit possimus perferendis provident delectus voluptates eum.</p>
-      <br>
-    </div>
-  </div>
-
-  <div class= 'restaurant-card'>
-    <img class ='card-img' src="/src/resources/images/restaurant-photo.jpg" alt ="Test Image">
-    <div class="restaurant-description">
-      <h1>Restaurant #3</h1>
-      <div class="restaurant-rating">
-        <p style="text-align:center">Rating: 4.5 (10 reviews)</p>
-      </div>
-      <p class='restaurant-paragraph'>Lorem ipsum dolor sit amet consectetur welFHJLKJHWELJF'LAKJLKFAEl'kmf adipisicing elit. Doloribus, repudiandae voluptate accusamus cupiditate placeat ut repellat, dicta quam earum, veritatis molestiae optio rem velit possimus perferendis provident delectus voluptates eum.</p>
-      <br>
-    </div>
-  </div>
-
-  <div class= 'restaurant-card'>
-    <img class ='card-img' src="/src/resources/images/restaurant-photo.jpg" alt ="Test Image">
-    <div class="restaurant-description">
-      <h1>Restaurant #3</h1>
-      <div class="restaurant-rating">
-        <p style="text-align:center">Rating: 4.5 (10 reviews)</p>
-      </div>
-      <p class='restaurant-paragraph'>Lorem ipsum dolor sit amet consectetur welFHJLKJHWELJF'LAKJLKFAEl'kmf adipisicing elit. Doloribus, repudiandae voluptate accusamus cupiditate placeat ut repellat, dicta quam earum, veritatis molestiae optio rem velit possimus perferendis provident delectus voluptates eum.</p>
-      <br>
-    </div>
-  </div>
-
-  <div class= 'restaurant-card'>
-    <img class ='card-img' src="/src/resources/images/restaurant-photo.jpg" alt ="Test Image">
-    <div class="restaurant-description">
-      <h1>Restaurant #3</h1>
-      <div class="restaurant-rating">
-        <p style="text-align:center">Rating: 4.5 (10 reviews)</p>
-      </div>
-      <p class='restaurant-paragraph'>Lorem ipsum dolor sit amet consectetur welFHJLKJHWELJF'LAKJLKFAEl'kmf adipisicing elit. Doloribus, repudiandae voluptate accusamus cupiditate placeat ut repellat, dicta quam earum, veritatis molestiae optio rem velit possimus perferendis provident delectus voluptates eum.</p>
-      <br>
-    </div>
-  </div>
-
+	<?php
+		require_once 'RestaurantTiles.php';
+	?>
   <div class ="Bottom" style="float:left; width:100%;" >
     <center>
       <br>

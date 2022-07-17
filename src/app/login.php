@@ -69,12 +69,11 @@ if (isset($_POST['login'])){
     // Compare passwords
     if(password_verify($tmp_password,$passwordFromDB))
     {
- 
-      // $user = new User($tmp_username);
+      session_start();
+      $_SESSION['email'] = $tmp_email;
 
-      // session_start();
-      // $_SESSION['user'] = $user;
-      echo "<p style='text-align:center; font-size:16px; margin: 4px 0px 4px 0px; color: black;'>Login Successful!! <br>";
+
+      echo "<p style='text-align:center; font-size:16px; margin: 4px 0px 4px 0px; color: black;'>Login Successful: $tmp_email!! <br>";
       echo "<a style='text-decoration:underline; font-weight:700; color:blue;' href='home.php'> Go to Homepage </a>";
     }
     else

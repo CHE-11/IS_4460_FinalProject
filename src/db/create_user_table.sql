@@ -4,7 +4,6 @@ create table users(
 	name varchar(128) not null,
 	phone varchar(128) not null,
 	password varchar(128) not null unique
-
 )
 
 

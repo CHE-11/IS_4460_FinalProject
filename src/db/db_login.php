@@ -1,6 +1,6 @@
 <?php
 $hn = "localhost:3306"; //host name
-$db = "food_reviews"; //database
+$db = "is4460foodreview"; //database
 $un = "root"; //username
 $pw = ""; //password 
 ?>

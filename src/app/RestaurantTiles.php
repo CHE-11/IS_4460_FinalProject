@@ -54,7 +54,7 @@ for($j=0; $j<$rows; ++$j) {
 	echo '<div class= "restaurant-card">
 			<img class ="card-img" src="../../src/resources/images/restaurant-photo.jpg" alt ="Test Image">
 			<div class="restaurant-description">
-				<h1>'.$RestName.'</h1>
+				<h2>'.$RestName.'</h1>
 				<div class="restaurant-rating">
 					<p style="text-align:center">Rating: '.$avgRating.'/10 ('.$ratingnum.' reviews)</p>
 				</div>

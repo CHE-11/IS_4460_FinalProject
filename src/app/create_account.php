@@ -19,6 +19,10 @@
               <input type = "password" class = "form-control" name = "password" placeholder = "Enter your Password" required>
               <input type = "email" class = "form-control" name = "email" placeholder = "Enter your Email" required>
               <input type = "tel" class = "form-control" name = "tel" placeholder = "Enter your Phone Number" required>
+              <div style="margin-bottom:10px;" class="flex-vertical-container">
+                <div class="center"><label style="color:white;"><input type="radio" name="user" value="user">I am a User</option><label></div>
+                <div class="center"><label style="color:white;"><input type="radio" name="user" value="restaurant">I am a Restaurant</option><label></div>
+              </div>
               <button id = "btn-primary" type = "submit"  name = "create_new_account">Create Account</button>
               <div class="center"><p id="newuser">Already have an account?</p></div>
               <a href="login.php">
@@ -42,10 +46,10 @@ $conn = new mysqli($hn, $un, $pw, $db);
 if($conn->connect_error) die($conn->connect_error);
 
 if (isset($_POST['create_new_account'])){
-	if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['tel'])) {
+	if (isset($_POST['name']) && isset($_POST['password']) && isset($_POST['email']) && isset($_POST['tel']) && isset($_POST['user'])) {
 		try{
 			$token = password_hash($_POST['password'], PASSWORD_DEFAULT);
-			$query = "insert into users(name, email, phone, password) values ('$_POST[name]', '$_POST[email]', '$_POST[tel]', '$token')";
+      $query = "insert into users(name, email, phone, password, role) values('$_POST[name]', '$_POST[email]', '$_POST[tel]', '$token', '$_POST[user]')";
 			$result = $conn->query($query);
 			if(!$result) die($conn->error);
 			$conn->close();
