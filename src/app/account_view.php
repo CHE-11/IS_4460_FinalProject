@@ -3,7 +3,7 @@
   <title>User Account Settings</title>
   <link rel = "stylesheet" type = "text/css" href = "/src/css/main.css">
 </head>
-<div class="header"><?php include('header.html');?></div>
+<div class="header"><?php include_once 'check_login_status.php';?></div>
 <body>
 <!--   Profile picture and information -->
 <div style='justify-content: center; display: flex; gap:20px;'>

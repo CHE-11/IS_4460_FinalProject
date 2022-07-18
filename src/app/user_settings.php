@@ -3,7 +3,7 @@
   <title>User Account Settings</title>
   <link rel = "stylesheet" type = "text/css" href = "/src/css/main.css">
 </head>
-<div class="header"><?php include('header.html');?></div>
+<div class="header"><?php include_once 'check_login_status.php';?></div>
 <body>
   <div style='justify-content: center; display: flex;'>
     <div style = 'align-items: center' class='vertical-container'>
@@ -17,7 +17,6 @@
   <div style="align-items:center; margin-top:10px; margin-bottom:-15px;" class="flex-vertical-container"> 
     <?php 
       require_once '../db/db_login.php';
-      session_start();
 
       if($_SESSION['logged_in'] == false){
         header("Location: login.php");

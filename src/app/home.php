@@ -11,8 +11,7 @@ it won't work well in replit
     <title>NavBar</title>
     <link rel="stylesheet" href="../../src/css/main.css">
 </head>
-<div class="header"><?php include('header.html');?></div>
-
+<div class="header"><?php include_once 'check_login_status.php';?></div>
 
 <!-- 
   Restaurant Name

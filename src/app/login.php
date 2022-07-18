@@ -8,8 +8,7 @@
     <title>NavBar</title>
     <link rel="stylesheet" href="/src/css/main.css">
 </head>
-  <div class="header"><?php include('header.html');?></div>
-
+<div class="header"><?php include_once 'check_login_status.php';?></div>
 
 <body>
   <div class='container' >
@@ -69,7 +68,6 @@ if (isset($_POST['login'])){
     // Compare passwords
     if(password_verify($tmp_password,$passwordFromDB))
     {
-      session_start();
       $_SESSION['email'] = $tmp_email;
       $_SESSION['logged_in'] = true;
 

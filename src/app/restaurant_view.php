@@ -5,7 +5,7 @@
     <link rel = "stylesheet" type = "text/css" href = "/src/css/main.css">
   </head>  
   <body>
-  <div class="header"><?php include('header.html');?></div>
+  <div class="header"><?php include_once 'check_login_status.php';?></div>
   
   <div style='justify-content: center; display: flex;'>
     <div style = 'align-items: center' class='vertical-container'>
