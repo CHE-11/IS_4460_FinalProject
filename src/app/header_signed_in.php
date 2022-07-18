@@ -34,10 +34,25 @@
     <div style='flex:1'>
         <ul style= 'display:flex; justify-content: right;'>
             <div class="dropdown">
-                <img onclick="dropdown()" class='small-user-icon'src="../resources/images/profile-pic.jpg"/>
+                <img onclick="dropdown()" class='small-user-icon'src=<?php 
+                    require_once '../db/db_login.php';
+                    $conn = new mysqli($hn, $un, $pw, $db);
+                    if($conn->connect_error) die($conn->connect_error);
+                    $query = "SELECT imagepath FROM users WHERE email = '$_SESSION[email]'";
+                    $result = $conn->query($query);
+                    if(!$result) die($conn->error);
+                    if($result->fetch_assoc()['imagepath'] == null){
+                        echo "../resources/profile_images/Default.png";
+                    }
+                    else{
+                        $result = $conn->query($query);
+                        if(!$result) die($conn->error);
+                        echo $result->fetch_assoc()['imagepath'];
+                    }
+                    ?>/>
                 <div id="nav-dropdown" class="dropdown-content">
                     <a href="user_settings.php">Settings</a>
-                    <a style="color:red; text-decoration:underline;" href="logout.php">Logout</a>
+                    <a style="color:red; text-decoration:underline; " href="logout.php">Logout</a>
                 </div>
             </div>
         </ul>

@@ -372,6 +372,7 @@ nav {
   vertical-align: middle;
   border-radius: 20px;
   border: #545454 solid 2px;
+  object-fit:cover;
 }
 
 

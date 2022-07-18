@@ -8,8 +8,29 @@
   <div style='justify-content: center; display: flex;'>
     <div style = 'align-items: center' class='vertical-container'>
       <h1>User Account Settings</h1>
-      <img style='width: 20%; margin-top:3%; border-radius: 20px;' src ="/src/resources/images/profile-pic.jpg">
-      <button id=btn-change-image  type = "submit" name = "change-img">Change Profile Picture</button>
+      <img style='width: 250px; height:250px; margin-top:3%; border-radius: 120px; object-fit: cover;' src =<?php 
+        require_once '../db/db_login.php';
+        $conn = new mysqli($hn, $un, $pw, $db);
+        if($conn->connect_error) die($conn->connect_error);
+        $query = "SELECT imagepath FROM users WHERE email = '$_SESSION[email]'";
+        $result = $conn->query($query);
+        if(!$result) die($conn->error);
+        if($result->fetch_assoc()['imagepath'] == null){
+          echo "../resources/profile_images/Default.png";
+        }
+        else{
+            $result = $conn->query($query);
+            if(!$result) die($conn->error);
+            echo $result->fetch_assoc()['imagepath'];
+        }
+        ?>/>
+      <form action="" method="post" enctype="multipart/form-data">
+        <div class="vertical-container">
+          <label style="margin-top:5px; text-align:center;"  for="file">Change Profile Picture</label>
+          <input style="margin-top:5px; text-align:center;" type="file" name="file" id="file">
+          <input style="margin-top:5px; margin-bottom:15px;" type="submit" name="submit_image" value="Submit New Profile Picture">
+        </div>
+      </form>
       
       <h2>Edit your account information below.</h2>
     </div>
@@ -17,6 +38,7 @@
   <div style="align-items:center; margin-top:10px; margin-bottom:-15px;" class="flex-vertical-container"> 
     <?php 
       require_once '../db/db_login.php';
+
 
       if($_SESSION['logged_in'] == false){
         header("Location: login.php");
@@ -94,5 +116,30 @@ if (isset($_POST['update_info'])){
     echo "<p style='text-align:center; font-size:16px; margin: 4px 0px 4px 0px; color: #b02020;'>Please fill out all fields. <br>";
   }
 }
+
+if(isset($_POST['submit_image'])){
+  $uploads_dir = '../resources/profile_images/';
+  $tmp_name = $_FILES['file']['tmp_name'];
+  $name = $_FILES['file']['name'];
+  $_SESSION['file_path'] = $uploads_dir.$name;
+  move_uploaded_file($tmp_name, "$uploads_dir/$name");
+  $conn = new mysqli($hn, $un, $pw, $db);
+  if($conn->connect_error) die($conn->connect_error);
+  $query = "UPDATE users 
+      SET 
+        imagepath = '$uploads_dir$name'
+      WHERE email = '$_SESSION[email]'";
+    $result = $conn->query($query);
+    if(!$result) die($conn->error);
+    $conn->close();
+
+
+  echo "<p style='text-align:center; font-size:16px; margin: 4px 0px 4px 0px; color: #b02020;'>Profile Picture Update Successful!!!<br>Refresh Page to See Changes";
+}
+else{
+  
+}
+
+
 ?>
 

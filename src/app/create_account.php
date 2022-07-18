@@ -53,6 +53,9 @@ if (isset($_POST['create_new_account'])){
 			if(!$result) die($conn->error);
 			$conn->close();
 			echo "<p style='text-align:center; font-size:16px; margin: 4px 0px 4px 0px; color: #b02020;'>Account Creation Successful!!! <br>";
+      $_SESSION['logged_in'] = true;
+      $_SESSION['email'] = $_POST['email'];
+      
 		}catch (Exception $e){
 			echo "<p style='text-align:center; font-size:16px; margin: 4px 0px 4px 0px; color: #b02020;'>You already have an account with this email.<br>Please Sign In <br>";
 		exit;

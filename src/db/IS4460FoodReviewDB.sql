@@ -250,6 +250,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `phone` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `password` varchar(128) NOT NULL,
   `role` varchar(128) NOT NULL,
+  `imagepath` varchar(128) NULL,
   PRIMARY KEY (`UserID`),
   UNIQUE KEY `password` (`password`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
