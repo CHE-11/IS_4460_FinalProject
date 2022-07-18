@@ -137,6 +137,14 @@ a:-webkit-any-link {
   display: inline-block;
   font-size: 16px;
 }
+
+#btn-delete-account:hover{
+  background-color: #b02020;
+  border: #545454;
+  color: white;
+}
+
+
   
 #btn-change-image{
   background-color: #4682fb; /* Green */

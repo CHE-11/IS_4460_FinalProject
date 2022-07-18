@@ -71,7 +71,7 @@ if (isset($_POST['login'])){
     {
       session_start();
       $_SESSION['email'] = $tmp_email;
-
+      $_SESSION['logged_in'] = true;
 
       echo "<p style='text-align:center; font-size:16px; margin: 4px 0px 4px 0px; color: black;'>Login Successful: $tmp_email!! <br>";
       echo "<a style='text-decoration:underline; font-weight:700; color:blue;' href='home.php'> Go to Homepage </a>";

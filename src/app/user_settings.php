@@ -18,6 +18,11 @@
     <?php 
       require_once '../db/db_login.php';
       session_start();
+
+      if($_SESSION['logged_in'] == false){
+        header("Location: login.php");
+      }
+
       if(isset($_SESSION['email'])){
         $user_email = $_SESSION['email'];
         $conn = new mysqli($hn, $un, $pw, $db);
@@ -41,11 +46,12 @@
         <input type = "password" class = "form-control" name = "password" placeholder = "Enter a New Password" required>
         <input type = "email" class = "form-control"  name = "email" placeholder = <?php echo $email; ?> required>
         <input type = "tel" class = "form-control"  name = "tel" placeholder = <?php echo $phone; ?> required>
-
-        <button style = 'margin-top:15px' id = "btn-primary" type = "submit" name = "update_info">Update Information</button>
-        <div style='margin-top:15px' class='container'><p style = 'color:black' >Want to delete your account?</p></div>
-        <button id=btn-delete-account  type = "submit" name = "delete_account">Delete Account</button>
+        <button style = 'margin-top:15px' id = "btn-primary" type = "submit" name = "update_info" value="update">Update Information</button>
       </form>  
+      <form class = "form-signin" action = "deleteAccount.php" method = "post">
+        <div style='margin-top:15px' class='container'><p style = 'color:black' >Want to delete your account?</p></div>
+        <button id=btn-delete-account  type = "submit" name = "delete_account" value="delete">Delete Account</button>
+      </form>
     </div>
   </div>
   <br>
@@ -75,7 +81,6 @@ if (isset($_POST['update_info'])){
 			$result = $conn->query($query);
 			if(!$result) die($conn->error);
 			$conn->close();
-      // destroy_session_and_data();
       $_SESSION['name'] = $_POST['name'];
       $_SESSION['email'] = $_POST['email'];
       $_SESSION['phone'] = $_POST['tel'];
@@ -86,17 +91,9 @@ if (isset($_POST['update_info'])){
 		exit;
 		}
 	}
-
   else {
     echo "<p style='text-align:center; font-size:16px; margin: 4px 0px 4px 0px; color: #b02020;'>Please fill out all fields. <br>";
   }
 }
-
-function destroy_session_and_data(){
-  $_SESSION = array();
-  setcookie(session_name(), '', time() - 2592000, '/');
-  session_destroy();
-}
-
 ?>
 
