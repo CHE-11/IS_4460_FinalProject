@@ -35,22 +35,39 @@ for($j=0; $j<$rows; ++$j) {
 		{
 			$RestName = 'No DB Connection';
 		}
-  $result->data_seek($j);
-	$RestAddress = $result->fetch_assoc()['RestaurantAddress'].'<br>';
-	if(is_null($RestAddress)) 
-		{
-			$RestAddress = 'No DB Connection';
-		}
+
+  
+ //  $result->data_seek($j);
+	// $RestAddress = $result->fetch_assoc()['state'].'<br>';
+	// if(is_null($RestAddress)) 
+	// 	{
+	// 		$RestAddress = 'No DB Connection';
+	// 	}
+    
+
+
+  
 	$result->data_seek($j);
 	$desc = $result->fetch_assoc()['Description'].'<br>';
 	if(is_null($desc)) 
 		{
 			$desc = 'No DB Connection';
 		}
+  
+  $street= $result->fetch_assoc()['Street'];
+  $city = $result->fetch_assoc()['City'];
+  $state = $result->fetch_assoc()['state'];
+  $zip_code = $result->fetch_assoc()['ZipCode'];
+
+  $full_address = $street." ".$city." ".$state." ".$zip_code
+  
+  
+  
 	$result2->data_seek($j);
 	$ratingscore = $result2->fetch_assoc()['totalScore'];
 	$result2->data_seek($j);
 	$ratingnum = $result2->fetch_assoc()['numReview'];
+
 	//echo $ratingscore.'<br>';
 	//echo $ratingnum;
 	$avgRating = round( $ratingscore / $ratingnum, 1);
@@ -61,7 +78,7 @@ for($j=0; $j<$rows; ++$j) {
 			<img class ="card-img" src="../../src/resources/images/restaurant-photo.jpg" alt ="Test Image">
 			<div class="restaurant-description">
 				<h2>'.$RestName.'</h1>
-        <h2>'.RestAddress.'</h1>
+        <h2>'.$full_address.'</h1>
 				<div class="restaurant-rating">
 					<p style="text-align:center">Rating: '.$avgRating.'/10 ('.$ratingnum.' reviews)</p>
 				</div>

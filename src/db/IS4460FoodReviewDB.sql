@@ -155,11 +155,11 @@ DROP TABLE IF EXISTS `restaurant`;
 CREATE TABLE IF NOT EXISTS `restaurant` (
   `RestaurantID` int NOT NULL AUTO_INCREMENT,
   `RestaurantName` varchar(128) NOT NULL,
-  `Description` varchar(600) NOT NULL,
+  `Description` varchar(600) NOT NULL,  
   `Street` varchar(128) NOT NULL,
   `City` varchar(128) NOT NULL,
-  `ZipCode` char(5) NOT NULL,
   `state` char(2) NOT NULL,
+  `ZipCode` char(5) NOT NULL,
   `OwnerName` varchar(128) NOT NULL,
   `Phone` char(12) NOT NULL,
   `Email` varchar(128) NOT NULL,
@@ -171,6 +171,10 @@ CREATE TABLE IF NOT EXISTS `restaurant` (
   KEY `MembershipType` (`MembershipType`),
   KEY `UserID` (`UserID`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- SELECT CONCAT(Street, " ", City, " ", State," ", Zip Code) AS RestaurantAddress;
+-- FROM restaurant;
+-- WHERE 
 
 --
 -- Dumping data for table `restaurant`
