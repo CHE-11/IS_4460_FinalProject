@@ -1,6 +1,6 @@
 <?php
 
-require_once '../db/db_login.php';
+require_once ('src\db\db_login.php');
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if ($conn->connect_error) die($conn->connect_error);

@@ -35,7 +35,7 @@
         <ul style= 'display:flex; justify-content: right;'>
             <div class="dropdown">
                 <img onclick="dropdown()" class='small-user-icon'src=<?php 
-                    require_once '../db/db_login.php';
+                    require_once ('src\db\db_login.php');
                     $conn = new mysqli($hn, $un, $pw, $db);
                     if($conn->connect_error) die($conn->connect_error);
                     $query = "SELECT imagepath FROM users WHERE email = '$_SESSION[email]'";

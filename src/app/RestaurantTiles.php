@@ -1,7 +1,7 @@
 <?php
 //This file returns the tiles for restaurants in the database and will not work in Replit
 //Test this in WAMP once you have the database setup in phpMyAdmin and have adjusted your hostname correctly.
-require_once '../db/db_login.php';
+require_once ('src\db\db_login.php');
 
 $conn = new mysqli($hn, $un, $pw, $db);
 if($conn->connect_error) die($conn->connect_error);

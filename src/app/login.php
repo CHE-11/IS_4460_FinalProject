@@ -36,7 +36,7 @@
 
 
 <?php
-require_once '../db/db_login.php';
+require_once ('src\db\db_login.php');
 
 if (isset($_POST['login'])){
 

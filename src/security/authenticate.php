@@ -22,7 +22,7 @@
 // if (isset($_POST['username']) && isset($_POST['password'])) {
 	
 
-// require_once '../db/db_login.php';
+// require_once ('src\db\db_login.php');
 // require_once '../security/User.php';
 // $conn = new mysqli($hn, $un, $pw, $db);
 // if($conn->connect_error) die($conn->connect_error);

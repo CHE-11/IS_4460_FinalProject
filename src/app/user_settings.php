@@ -9,7 +9,7 @@
     <div style = 'align-items: center' class='vertical-container'>
       <h1>User Account Settings</h1>
       <img style='width: 250px; height:250px; margin-top:3%; border-radius: 120px; object-fit: cover;' src =<?php 
-        require_once '../db/db_login.php';
+        require_once ('src\db\db_login.php');
         $conn = new mysqli($hn, $un, $pw, $db);
         if($conn->connect_error) die($conn->connect_error);
         $query = "SELECT imagepath FROM users WHERE email = '$_SESSION[email]'";
@@ -37,7 +37,7 @@
   </div>
   <div style="align-items:center; margin-top:10px; margin-bottom:-15px;" class="flex-vertical-container"> 
     <?php 
-      require_once '../db/db_login.php';
+      require_once ('src\db\db_login.php');
 
 
       if($_SESSION['logged_in'] == false){
